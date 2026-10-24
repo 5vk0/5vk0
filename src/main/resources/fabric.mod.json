@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "simplevisuals",
+  "version": "${version}",
+  "name": "Simple Visuals",
+  "description": "Lekki, czysto wizualny HUD.",
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": { "client": ["com.example.visuals.SimpleVisualsClient"] },
+  "depends": {
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.1.2",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
