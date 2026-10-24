@@ -13,7 +13,6 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.ParticleStatus;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.AbstractSliderButton;
@@ -156,11 +155,11 @@ public class SimpleVisualsClient implements ClientModInitializer {
             pending = null;
             cooldown = 4; // anty-spam
 
-            ParticleStatus status = mc.options.particles().get();
-            if (status == ParticleStatus.MINIMAL) return;
+            String status = mc.options.particles().get().name();
+            if (status.equals("MINIMAL")) return;
 
             int n = Math.min(Config.I.particleCount, 24);
-            if (status == ParticleStatus.DECREASED) n /= 2;
+            if (status.equals("DECREASED")) n /= 2;
 
             RandomSource r = e.getRandom();
             double w = e.getBbWidth(), h = e.getBbHeight();
